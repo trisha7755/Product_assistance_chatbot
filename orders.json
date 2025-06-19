@@ -1,0 +1,55 @@
+[
+    {
+        "order_id": "12345",
+        "status": "Shipped",
+        "items": [
+            "Laptop",
+            "Wireless Mouse"
+        ],
+        "total": "$1500",
+        "delivery_date": "2024-11-25",
+        "delivery_address": "12/1 Malibu Road",
+        "delivery_partner": "FedEx",
+        "current_location": "Sorting Facility, New York",
+        "actions": [
+            "Reschedule",
+            "Cancel"
+        ],
+        "remaining_items": [],
+        "proof_of_delivery": null
+    },
+    {
+        "order_id": "67890",
+        "status": "Out for Delivery",
+        "items": [
+            "Smartphone",
+            "Screen Protector"
+        ],
+        "total": "$800",
+        "delivery_date": "2024-11-20",
+        "delivery_address": "Modify Another Address",
+        "delivery_partner": "UPS",
+        "current_location": "Delivery Truck, San Francisco",
+        "actions": [
+            "Reschedule",
+            "Cancel"
+        ],
+        "remaining_items": [],
+        "proof_of_delivery": null
+    },
+    {
+        "order_id": "54321",
+        "status": "Delivered",
+        "items": [
+            "Headphones"
+        ],
+        "total": "$200",
+        "delivery_date": "2024-11-18",
+        "delivery_address": "789 Pine Street, Chicago, IL",
+        "delivery_partner": "DHL",
+        "current_location": "Delivered",
+        "actions": [],
+        "remaining_items": [],
+        "proof_of_delivery": "Signed by John Doe"
+    }
+]
