@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Management Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    #chatbot-container {
+      width: 300px;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #chatbot-header {
+      background: #0078d7;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    #chat-window {
+      padding: 10px;
+      height: 250px;
+      overflow-y: auto;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .message {
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 80%;
+    }
+
+    .bot-message {
+      background: #e6f7ff;
+      text-align: left;
+    }
+
+    .user-message {
+      background: #d7f7e6;
+      text-align: right;
+      margin-left: auto;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 8px;
+      border: none;
+      background: #0078d7;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #005bb5;
+    }
+
+    button.small-btn {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="chatbot-container">
+    <div id="chatbot-header">Chatbot</div>
+    <div id="chat-window">
+      <div class="message bot-message">{{ response.replace('\n', '<br>')|safe }}</div>
+    </div>
+    <form method="POST">
+      <input type="hidden" name="context" value="{{ context }}">
+      {% if buttons %}
+        {% for button in buttons %}
+          <button type="submit" name="user_input" value="{{ button }}" class="small-btn">{{ button }}</button>
+        {% endfor %}
+      {% else %}
+        <input type="text" name="user_input" placeholder="Type your response here" required>
+        <button type="submit">Send</button>
+      {% endif %}
+    </form>
+  </div>
+</body>
+</html>
